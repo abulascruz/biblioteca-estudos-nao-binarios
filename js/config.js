@@ -1,7 +1,7 @@
 const DATASETS = {
   books: {
     name: "Obras",
-    file: "datasets/books.csv"
+    file: "datasets/obras.csv"
   },
   movies: {
     name: "Autorias",
