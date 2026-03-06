@@ -1,81 +1,81 @@
 document.addEventListener("DOMContentLoaded", function () {
-const select = document.getElementById("datasetSelect");
+  const select = document.getElementById("datasetSelect");
 
-Object.entries(DATASETS).forEach(([key, val]) => {
-  const option = document.createElement("option");
-  option.value = key;
-  option.textContent = val.name;
-  select.appendChild(option);
-});
-
-select.addEventListener("change", () => {
-  loadDataset(select.value);
-});
-
-function loadDataset(key){
-
-  const config = DATASETS[key];
-
-  Papa.parse(config.file,{
-    download:true,
-    header:true,
-    complete:function(results){
-
-      buildTable(results.data);
-
-    }
+  Object.entries(DATASETS).forEach(([key, val]) => {
+    const option = document.createElement("option");
+    option.value = key;
+    option.textContent = val.name;
+    select.appendChild(option);
   });
 
-}
+  select.addEventListener("change", () => {
+    loadDataset(select.value);
+  });
 
-function buildTable(data){
+  function loadDataset(key){
 
-  const columns = Object.keys(data[0]);
+    const config = DATASETS[key];
 
-  if ($.fn.DataTable.isDataTable("#table")) {
-    $("#table").DataTable().destroy();
+    Papa.parse(config.file,{
+      download:true,
+      header:true,
+      complete:function(results){
+
+        buildTable(results.data);
+
+      }
+    });
+
   }
 
-  // reset DOM
-  const head = document.getElementById("table-head");
-  const filter = document.getElementById("table-filter");
-  const tbody = document.querySelector("#table tbody");
+  function buildTable(data){
 
-  head.innerHTML="";
-  filter.innerHTML="";
-  tbody.innerHTML="";
+    const columns = Object.keys(data[0]);
+
+    if ($.fn.DataTable.isDataTable("#table")) {
+      $("#table").DataTable().destroy();
+    }
+
+    // reset DOM
+    const head = document.getElementById("table-head");
+    const filter = document.getElementById("table-filter");
+    const tbody = document.querySelector("#table tbody");
+
+    head.innerHTML="";
+    filter.innerHTML="";
+    tbody.innerHTML="";
   
-  columns.forEach((col, index)=>{
+    columns.forEach((col, index)=>{
 
-    head.innerHTML += `<th>${col}</th>`;
+      head.innerHTML += `<th>${col}</th>`;
 
-    filter.innerHTML += `
-      <th>
-        <input
-          id="filter_col_${index}"
-          name="filter_col_${index}"
-          data-column="${index}"
-          placeholder="Search ${col}"
-          autocomplete="off"
-        >
-      </th>
-    `;
+      filter.innerHTML += `
+        <th>
+          <input
+            id="filter_col_${index}"
+            name="filter_col_${index}"
+            data-column="${index}"
+            placeholder="Search ${col}"
+            autocomplete="off"
+          >
+        </th>
+      `;
 
-  });
+    });
 
-  const table = $("#table").DataTable({
-    data:data,
-    columns:columns.map(c=>({data:c})),
-    pageLength:25
-  });
+    const table = $("#table").DataTable({
+      data:data,
+      columns:columns.map(c=>({data:c})),
+      pageLength:25
+    });
 
-  $("#table tfoot input").on("keyup change",function(){
-    const col=$(this).parent().index();
-    table.column(col).search(this.value).draw();
-  });
+    $("#table tfoot input").on("keyup change",function(){
+      const col=$(this).parent().index();
+      table.column(col).search(this.value).draw();
+    });
 
-}
+  }
 
-loadDataset(Object.keys(DATASETS)[0]);
+  loadDataset(Object.keys(DATASETS)[0]);
 
 });
