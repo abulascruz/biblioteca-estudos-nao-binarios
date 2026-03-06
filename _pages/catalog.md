@@ -4,9 +4,6 @@ title: Catálogo
 permalink: /catalog/
 ---
 
-<link rel="stylesheet"
-href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
-
 <h1>Catálogo</h1>
 
 <label for="datasetSelect">Base de Dados:</label>
@@ -26,6 +23,7 @@ href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
 
 <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
 
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
 <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
