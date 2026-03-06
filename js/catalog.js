@@ -1,3 +1,4 @@
+document.addEventListener("DOMContentLoaded", function () {
 const select = document.getElementById("datasetSelect");
 
 Object.entries(DATASETS).forEach(([key, val]) => {
@@ -63,3 +64,5 @@ function buildTable(data){
 }
 
 loadDataset(Object.keys(DATASETS)[0]);
+
+});
