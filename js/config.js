@@ -1,14 +1,14 @@
 const DATASETS = {
-  books: {
+  obras: {
     name: "Obras",
-    file: "datasets/obras.csv"
+    file: "{{ '/datasets/obras.csv' | relative_url }}"
   },
-  movies: {
+  autorias: {
     name: "Autorias",
-    file: "datasets/autorias.csv"
+    file: "{{ '/datasets/autorias.csv' | relative_url }}"
   },
-  games: {
+  eventos: {
     name: "Eventos",
-    file: "datasets/eventos.csv"
+    file: "{{ '/datasets/eventos.csv' | relative_url }}"
   }
 };
