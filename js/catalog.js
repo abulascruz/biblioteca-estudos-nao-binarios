@@ -44,10 +44,23 @@ function buildTable(data){
   head.innerHTML="";
   filter.innerHTML="";
   tbody.innerHTML="";
+  
+  columns.forEach((col, index)=>{
 
-  columns.forEach(col=>{
     head.innerHTML += `<th>${col}</th>`;
-    filter.innerHTML += `<th><input placeholder="Search ${col}"></th>`;
+
+    filter.innerHTML += `
+      <th>
+        <input
+          id="filter_col_${index}"
+          name="filter_col_${index}"
+          data-column="${index}"
+          placeholder="Search ${col}"
+          autocomplete="off"
+        >
+      </th>
+    `;
+
   });
 
   const table = $("#table").DataTable({
