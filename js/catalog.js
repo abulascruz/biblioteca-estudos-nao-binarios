@@ -31,7 +31,9 @@ function buildTable(data){
 
   const columns = Object.keys(data[0]);
 
-  $("#table").DataTable().destroy();
+  if ($.fn.DataTable.isDataTable("#table")) {
+    $("#table").DataTable().destroy();
+  }
 
   const head = document.getElementById("table-head");
   const filter = document.getElementById("table-filter");
