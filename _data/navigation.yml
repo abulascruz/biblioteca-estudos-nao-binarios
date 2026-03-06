@@ -1,0 +1,5 @@
+main:
+  - title: "Catálogo"
+    url: /catalog/
+  - title: "Sobre o projeto"
+    url: /about/
