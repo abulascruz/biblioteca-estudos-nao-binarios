@@ -35,11 +35,14 @@ function buildTable(data){
     $("#table").DataTable().destroy();
   }
 
+  // reset DOM
   const head = document.getElementById("table-head");
   const filter = document.getElementById("table-filter");
+  const tbody = document.querySelector("#table tbody");
 
   head.innerHTML="";
   filter.innerHTML="";
+  tbody.innerHTML="";
 
   columns.forEach(col=>{
     head.innerHTML += `<th>${col}</th>`;
