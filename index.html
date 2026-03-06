@@ -1,1 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
 
+<meta charset="UTF-8">
+<title>Biblioteca de Estudos Não-Binários Brasileiros</title>
+
+<link rel="stylesheet"
+href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+
+</head>
+
+<body>
+
+<h1>Catálogo</h1>
+
+<label>Base de Dados:</label>
+<select id="datasetSelect"></select>
+
+<table id="table" class="display">
+<thead>
+<tr id="table-head"></tr>
+</thead>
+
+<tfoot>
+<tr id="table-filter"></tr>
+</tfoot>
+
+<tbody></tbody>
+
+</table>
+
+<script src="js/config.js"></script>
+<script src="js/catalog.js"></script>
+
+</body>
+</html>
