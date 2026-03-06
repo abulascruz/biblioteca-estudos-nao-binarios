@@ -1,0 +1,11 @@
+obras:
+  name: Obras
+  file: /datasets/obras.csv
+
+autorias:
+  name: Autorias
+  file: /datasets/autorias.csv
+
+eventos:
+  name: Eventos
+  file: /datasets/eventos.csv
