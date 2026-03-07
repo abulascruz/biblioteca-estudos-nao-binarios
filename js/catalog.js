@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const columns = Object.keys(data[0]);
 
-    if ($.fn.dataTable.isDataTable("#table")) {
+    if ($.fn.DataTable.isDataTable("#table")) {
       $("#table").DataTable().destroy();
     }
 
