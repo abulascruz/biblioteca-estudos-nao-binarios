@@ -21,8 +21,6 @@ permalink: /catalog/
 <tbody></tbody>
 </table>
 
-<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-
 <link rel="stylesheet" href="https://cdn.datatables.net/2.3.7/css/dataTables.dataTables.css">
 <script src="https://cdn.datatables.net/2.3.7/js/dataTables.js"></script>
 
