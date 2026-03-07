@@ -21,8 +21,8 @@ permalink: /catalog/
 <tbody></tbody>
 </table>
 
-<link rel="stylesheet" href="https://cdn.datatables.net/2.3.7/css/dataTables.dataTables.css">
-<script src="https://cdn.datatables.net/2.3.7/js/dataTables.js"></script>
+<link rel="stylesheet" href="https://cdn.datatables.net/2.3.7/css/dataTables.dataTables.min.css">
+<script src="https://cdn.datatables.net/2.3.7/js/dataTables.min.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
 
